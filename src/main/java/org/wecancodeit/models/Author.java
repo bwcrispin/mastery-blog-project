@@ -20,9 +20,8 @@ public class Author {
 	private Collection<Post> posts;
 	
 	
-	public Author(String name, Collection<Post> posts) {
+	public Author(String name) {
 		this.name = name;
-		this.posts = posts;
 	}
 	
 	public Author() {}
