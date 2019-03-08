@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Tag {
@@ -12,6 +13,8 @@ public class Tag {
 	@GeneratedValue
 	private Long id;
 	private String name;
+	
+	@ManyToMany
 	private Collection<Post> posts;
 	
 	public Tag() {}
