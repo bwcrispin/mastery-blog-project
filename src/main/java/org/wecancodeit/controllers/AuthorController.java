@@ -34,8 +34,8 @@ public class AuthorController {
 
 	// maps html for one author by id
 	@GetMapping("/author/{id}")
-	public String getSingleAuthor(@PathVariable Long id, Model model) {
-		model.addAttribute("author", authorRepo.findById(id).get());
+	public String getSingleAuthor(@PathVariable Long authorId, Model model) {
+		model.addAttribute("author", authorRepo.findById(authorId).get());
 		return "author-single";
 	}
 }

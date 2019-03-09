@@ -42,12 +42,12 @@ public class PostController {
 	}
 	
 	@GetMapping("/post/{id}")
-	public String getSinglePost(@PathVariable Long id, Model model) {
-		model.addAttribute("post", postRepo.findById(id).get());
+	public String getSinglePost(@PathVariable Long postId, Model model) {
+		model.addAttribute("post", postRepo.findById(postId).get());
 		return "post-single";
 	}
 	
-	@PostMapping("all/")
+	@PostMapping("/all")
 	public String addPost(String title, String body, LocalDateTime date, Author authors, Genre genre,
 			Tag  ...tags) {
 		postRepo.save(new Post(title, body, date, authors, genre, tags));
