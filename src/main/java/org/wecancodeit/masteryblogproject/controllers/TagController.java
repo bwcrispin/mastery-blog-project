@@ -13,7 +13,7 @@ import org.wecancodeit.masteryblogproject.repositories.PostRepository;
 import org.wecancodeit.masteryblogproject.repositories.TagRepository;
 
 @Controller
-@RequestMapping("/tags")
+//@RequestMapping("/tags")
 public class TagController {
 	
 	@Resource
@@ -22,23 +22,23 @@ public class TagController {
 	@Resource
 	PostRepository postRepo;
 	
-	@GetMapping("/all")
+	@GetMapping("/tags/tags-all")
 	public String getTagsAll(String tag, Model model) {
 		model.addAttribute("tags", tagRepo.findAll());
-		return "tags-all";
+		return "/tags/tags-all";
 	}
 
 	// add new tag
-	@PostMapping("/all")
+	@PostMapping("/tags/tags-all")
 	public String addTag(String name) {
 		tagRepo.save(new Tag(name));
-		return "redirect:/tags-all";	
+		return "redirect:/tags/tags-all";	
 	}
 
 	// maps html for one tag by id
 	@GetMapping("/tag/{id}")
 	public String getSingleTag(@PathVariable Long tagId, Model model) {
 		model.addAttribute("tag", tagRepo.findById(tagId).get());
-		return "tag-single";
+		return "/tags/tag-single";
 	}
 }
