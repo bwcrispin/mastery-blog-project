@@ -12,31 +12,31 @@ import org.wecancodeit.masteryblogproject.models.Genre;
 import org.wecancodeit.masteryblogproject.repositories.GenreRepository;
 
 @Controller
-@RequestMapping("/genres")
+//@RequestMapping("/genres")
 public class GenreController {
 	
 	@Resource
 	GenreRepository genreRepo;
 	
 	// maps html page of all genres
-	@GetMapping("/all")
+	@GetMapping("/genres/genres-all")
 	public String getGenresAll(String genre, Model model) {
 		model.addAttribute("genres", genreRepo.findAll());
-		return "genres-all";
+		return "/genres/genres-all";
 	}
 
 	// add new genre
-	@PostMapping("/all")
+	@PostMapping("/genres/genres-all")
 	public String addGenre(String name) {
 		genreRepo.save(new Genre(name));
-		return "redirect:/genres-all";
+		return "redirect:/genres/genres-all";
 	}
 
 	// maps html for one genre by id
-	@GetMapping("/genre/{id}")
+	@GetMapping("/genres/{id}")
 	public String getSingleGenre(@PathVariable Long genreId, Model model) {
 		model.addAttribute("genre", genreRepo.findById(genreId).get());
-		return "genre-single";
+		return "/genres/genre-single";
 	}
 
 }

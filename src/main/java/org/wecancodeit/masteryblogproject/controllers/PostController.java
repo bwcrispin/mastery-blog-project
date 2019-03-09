@@ -20,7 +20,7 @@ import org.wecancodeit.masteryblogproject.repositories.PostRepository;
 import org.wecancodeit.masteryblogproject.repositories.TagRepository;
 
 @Controller
-@RequestMapping("/posts")
+//@RequestMapping("/posts")
 public class PostController {
 
 	@Resource
@@ -35,23 +35,23 @@ public class PostController {
 	@Resource
 	PostRepository postRepo;
 	
-	@GetMapping("/all")
+	@GetMapping("/posts/posts-all")
 	public String getPostsAll(String post, Model model) {
 		model.addAttribute("posts", postRepo.findAll());
-		return "/posts-all";
+		return "/posts/posts-all";
 	}
 	
-	@GetMapping("/post/{id}")
+	@GetMapping("/posts/{id}")
 	public String getSinglePost(@PathVariable Long postId, Model model) {
 		model.addAttribute("post", postRepo.findById(postId).get());
-		return "post-single";
+		return "/posts/post-single";
 	}
 	
-	@PostMapping("/all")
+	@PostMapping("/posts/posts-all")
 	public String addPost(String title, String body, LocalDateTime date, Author authors, Genre genre,
 			Tag  ...tags) {
 		postRepo.save(new Post(title, body, date, authors, genre, tags));
-		return "redirect:/posts-all";
+		return "redirect:/posts/posts-all";
 	}
 	
 }
