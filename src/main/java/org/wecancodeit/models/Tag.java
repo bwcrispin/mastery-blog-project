@@ -19,9 +19,8 @@ public class Tag {
 	
 	public Tag() {}
 	
-	public Tag(String name, Collection<Post> posts) {
+	public Tag(String name) {
 		this.name = name;
-		this.posts = posts;
 	}
 
 	public Long getId() {
@@ -38,7 +37,7 @@ public class Tag {
 
 	@Override
 	public String toString() {
-		return "Tag [id=" + id + ", name=" + name + ", posts=" + posts + "]";
+		return "Tag [id=" + id + ", name=" + name + "]";
 	}
 	
 	

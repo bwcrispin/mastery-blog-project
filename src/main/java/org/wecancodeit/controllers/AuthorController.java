@@ -29,7 +29,7 @@ public class AuthorController {
 	@PostMapping("/all")
 	public String addAuthor(String name) {
 		authorRepo.save(new Author(name));
-		return "redirect:/authors";
+		return "redirect:/authors-all";
 	}
 
 	// maps html for one author by id

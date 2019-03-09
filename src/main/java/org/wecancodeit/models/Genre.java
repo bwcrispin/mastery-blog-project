@@ -20,9 +20,8 @@ public class Genre {
 	
 	public Genre() {}
 	
-	public Genre(String name, Collection<Post> posts) {
+	public Genre(String name) {
 		this.name = name;
-		this.posts = posts;
 	}
 
 	public Long getId() {
@@ -39,7 +38,7 @@ public class Genre {
 
 	@Override
 	public String toString() {
-		return "Genre [id=" + id + ", name=" + name + ", posts=" + posts + "]";
+		return "Genre [id=" + id + ", name=" + name + "]";
 	}
 
 
