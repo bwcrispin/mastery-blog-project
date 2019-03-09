@@ -7,5 +7,7 @@ import org.wecancodeit.masteryblogproject.models.Post;
 
 public interface PostRepository extends CrudRepository<Post, Long>{
 
+	Post findByTitle(String string);
+
 //	Collection<Post> findByTagId(String tagId);
 }
