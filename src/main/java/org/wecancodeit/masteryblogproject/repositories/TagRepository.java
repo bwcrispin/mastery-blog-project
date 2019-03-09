@@ -1,7 +1,7 @@
-package org.wecancodeit.repositories;
+package org.wecancodeit.masteryblogproject.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import org.wecancodeit.models.Tag;
+import org.wecancodeit.masteryblogproject.models.Tag;
 
 public interface TagRepository extends CrudRepository<Tag, Long>{
 

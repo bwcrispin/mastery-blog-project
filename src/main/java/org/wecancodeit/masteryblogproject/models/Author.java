@@ -1,4 +1,4 @@
-package org.wecancodeit.models;
+package org.wecancodeit.masteryblogproject.models;
 
 import java.util.Collection;
 
@@ -7,8 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+
 @Entity
-public class Tag {
+public class Author {
+	
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -17,11 +19,12 @@ public class Tag {
 	@ManyToMany
 	private Collection<Post> posts;
 	
-	public Tag() {}
 	
-	public Tag(String name) {
+	public Author(String name) {
 		this.name = name;
 	}
+	
+	public Author() {}
 
 	public Long getId() {
 		return id;
@@ -37,8 +40,10 @@ public class Tag {
 
 	@Override
 	public String toString() {
-		return "Tag [id=" + id + ", name=" + name + "]";
+		return "Author [id=" + id + ", name=" + name + ", posts=" + posts + "]";
 	}
 	
 	
+	
+
 }

@@ -1,4 +1,4 @@
-package org.wecancodeit.models;
+package org.wecancodeit.masteryblogproject.models;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;

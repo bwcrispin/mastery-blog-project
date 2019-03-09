@@ -1,4 +1,4 @@
-package org.wecancodeit.controllers;
+package org.wecancodeit.masteryblogproject.controllers;
 
 import javax.annotation.Resource;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.models.Genre;
-import org.wecancodeit.repositories.GenreRepository;
+import org.wecancodeit.masteryblogproject.models.Genre;
+import org.wecancodeit.masteryblogproject.repositories.GenreRepository;
 
 @Controller
 @RequestMapping("/genres")

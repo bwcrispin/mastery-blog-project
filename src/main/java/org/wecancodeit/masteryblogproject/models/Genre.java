@@ -1,4 +1,4 @@
-package org.wecancodeit.models;
+package org.wecancodeit.masteryblogproject.models;
 
 import java.util.Collection;
 

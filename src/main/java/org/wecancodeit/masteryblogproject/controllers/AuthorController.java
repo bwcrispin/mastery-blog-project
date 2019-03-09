@@ -1,4 +1,4 @@
-package org.wecancodeit.controllers;
+package org.wecancodeit.masteryblogproject.controllers;
 
 import javax.annotation.Resource;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.models.Author;
-import org.wecancodeit.repositories.AuthorRepository;
+import org.wecancodeit.masteryblogproject.models.Author;
+import org.wecancodeit.masteryblogproject.repositories.AuthorRepository;
 
 @Controller
 @RequestMapping("/authors")
@@ -27,15 +27,16 @@ public class AuthorController {
 
 	// add new author
 	@PostMapping("/all")
+
 	public String addAuthor(String name) {
 		authorRepo.save(new Author(name));
-		return "redirect:/authors-all";
+		return "redirect:/authors";
 	}
 
 	// maps html for one author by id
 	@GetMapping("/author/{id}")
-	public String getSingleAuthor(@PathVariable Long authorId, Model model) {
-		model.addAttribute("author", authorRepo.findById(authorId).get());
+	public String getSingleAuthor(@PathVariable Long id, Model model) {
+		model.addAttribute("author", authorRepo.findById(id).get());
 		return "author-single";
 	}
 }

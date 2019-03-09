@@ -1,4 +1,4 @@
-package org.wecancodeit.controllers;
+package org.wecancodeit.masteryblogproject.controllers;
 
 import javax.annotation.Resource;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.models.Tag;
-import org.wecancodeit.repositories.PostRepository;
-import org.wecancodeit.repositories.TagRepository;
+import org.wecancodeit.masteryblogproject.models.Tag;
+import org.wecancodeit.masteryblogproject.repositories.PostRepository;
+import org.wecancodeit.masteryblogproject.repositories.TagRepository;
 
 @Controller
 @RequestMapping("/tags")
