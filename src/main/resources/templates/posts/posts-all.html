@@ -21,7 +21,53 @@
                 <a href="/tags/tags-all">Tags</a>
             </nav>
         </header>
-        <h1>Posts!</h1>
+        
+        
+
+
+        <div class="wrapper">
+                
+                <h1 class="post__header">Posts!</h1>
+
+                <div class= "box post__list">
+                        <div class="post" th:each="post : ${posts}">
+                                <h2 class="post-title" th:text="${post.title}"> Title</h2>
+                                <p class="post-body">
+                                  <span th:text="${post.body}">body</span>  
+                                </p>
+                                <h3>DATE</h3>
+                                <h4 class="post-date">
+                                        <span th:text="${post.date}">date</span>  
+                                </h4>
+                                <!-- <h3 class="post-author">
+                                        <span th:text="${post.authors}">author</span>  
+                                </h3> -->
+                                <h3>AUTHORS</h3>
+                                <ul class="post__authors__ul">
+                                        <li class="post__authors__author" th:each="authors : ${post.authors}">
+                                            <span th:text="${post.author.name}">author</span>
+                                        </li>
+                                </ul>
+
+                                <h3>GENRE</h3>
+                                <h4 class="post-genre">
+                                        <span th:text="${post.genre.name}">genre</span>  
+                                </h4>
+                                <!-- <h3 class="post-tags">
+                                        <span th:text="${post.tags}">tag</span>  
+                                </h3> -->
+                                
+                                <h3>TAGS</h3>
+                                <ul class="post__tags__ul">
+                                        <li class="post__tags__tag" th:each="tags : ${post.tags}">
+                                            <span th:text="${post.tag.name}">tag</span>
+                                        </li>
+                                </ul>
+                        </div>
+                 </div>
+
+        </div>
+
         
         <footer>
             <p>Mastery Blog Enterprises, 2019</p>
