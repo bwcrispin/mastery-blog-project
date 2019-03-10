@@ -26,7 +26,7 @@ public class AuthorController {
 	}
 
 	// add new author
-	@PostMapping("/all")
+	@PostMapping("/authors/authors-all")
 	public String addAuthor(String name) {
 		authorRepo.save(new Author(name));
 		return "redirect:/authors/authors-all";
@@ -34,8 +34,8 @@ public class AuthorController {
 
 	// maps html for one author by id
 	@GetMapping("/author/{id}")
-	public String getSingleAuthor(@PathVariable Long id, Model model) {
-		model.addAttribute("author", authorRepo.findById(id).get());
+	public String getSingleAuthor(@PathVariable Long Id, Model model) {
+		model.addAttribute("author", authorRepo.findById(Id).get());
 		return "/authors/author-single";
 	}
 }
