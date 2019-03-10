@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Mastery Blog</title>
         <link rel="stylesheet" type="text/css" href="#">
+        <link rel="stylesheet" href="/css/style-all-posts.css">
     </head>
     <body>
         <header>
@@ -26,10 +27,10 @@
 
 
         <div class="wrapper">
-                
-                <h1 class="post__header">Post!</h1>
-
-                <div class= "box post__list">
+                <div class="header__name">
+                <h1 class="post__header">Blogs</h1>
+            </div>
+                <div class= "post__list">
                         <div class="post" th:each="post : ${posts}">
 
                                 <h2 class="post__title">
@@ -39,29 +40,29 @@
                                 <p class="post-body">
                                   <span th:text="${post.body}">body</span>  
                                 </p>
-                                <h3>DATE</h3>
-                                <h4 class="post-date">
+                                <h4>Date</h4>
+                                <p class="post-date">
                                         <span th:text="${post.date}">date</span>  
-                                </h4>
+                                </p>
                                 <!-- <h3 class="post-author">
                                         <span th:text="${post.authors}">author</span>  
                                 </h3> -->
-                                <h3>AUTHORS</h3>
+                                <h4>Written By</h4>
                                 <ul class="post__authors__ul">
                                         <li class="post__authors__author" th:each="author : ${post.authors}">
                                             <span th:text="${author.name}">author</span>
                                         </li>
                                 </ul> 
 
-                                <h3>GENRE</h3>
-                                <h4 class="post-genre">
+                                <h4>Genre</h4>
+                                <p class="post-genre">
                                         <span th:text="${post.genre.name}">genre</span>  
-                                </h4>
+                                </p>
                                 <!-- <h3 class="post-tags">
                                         <span th:text="${post.tags}">tag</span>  
                                 </h3> -->
                                 
-                                <h3>TAGS</h3>
+                                <h4>Tags</h4>
                                 <ul class="post__tags__ul">
                                         <li class="post__tags__tag" th:each="tag : ${post.tags}">
                                             <span th:text="${tag.name}">tag</span>
