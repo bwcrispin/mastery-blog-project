@@ -44,10 +44,10 @@
                                 </h3> -->
                                 <h3>AUTHORS</h3>
                                 <ul class="post__authors__ul">
-                                        <li class="post__authors__author" th:each="authors : ${post.authors}">
-                                            <span th:text="${post.author.name}">author</span>
+                                        <li class="post__authors__author" th:each="author : ${post.authors}">
+                                            <span th:text="${author.name}">author</span>
                                         </li>
-                                </ul>
+                                </ul> 
 
                                 <h3>GENRE</h3>
                                 <h4 class="post-genre">
@@ -59,8 +59,8 @@
                                 
                                 <h3>TAGS</h3>
                                 <ul class="post__tags__ul">
-                                        <li class="post__tags__tag" th:each="tags : ${post.tags}">
-                                            <span th:text="${post.tag.name}">tag</span>
+                                        <li class="post__tags__tag" th:each="tag : ${post.tags}">
+                                            <span th:text="${tag.name}">tag</span>
                                         </li>
                                 </ul>
                         </div>
