@@ -41,7 +41,7 @@ public class PostController {
 		return "/posts/posts-all";
 	}
 	
-	@GetMapping("/posts/{id}")
+	@GetMapping("/post/{postId}")
 	public String getSinglePost(@PathVariable Long postId, Model model) {
 		model.addAttribute("post", postRepo.findById(postId).get());
 		return "/posts/post-single";
