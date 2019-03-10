@@ -36,7 +36,7 @@ public class TagController {
 	}
 
 	// maps html for one tag by id
-	@GetMapping("/tag/{id}")
+	@GetMapping("/tag/{tagId}")
 	public String getSingleTag(@PathVariable Long tagId, Model model) {
 		model.addAttribute("tag", tagRepo.findById(tagId).get());
 		return "/tags/tag-single";
