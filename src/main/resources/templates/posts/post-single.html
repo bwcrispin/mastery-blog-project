@@ -1,42 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Mastery Blog</title>
-        <link rel="stylesheet" type="text/css" href="#">
-    </head>
-    <body>
-        <header>
-            <figure id="logo">
-                <a href="/"><img src="#" alt="Mastery Blog logo"></a>
-            </figure>
-            <p>Blog Name Goes Here!</p>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/posts/posts-all">Posts</a>
-                <a href="/authors/authors-all">Authors</a>
-                <a href="/genres/genres-all">Genres</a>
-                <a href="/tags/tags-all">Tags</a>
-            </nav>
-        </header>
-        
-        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Post</title>
+</head>
+<header>
+        <figure id="logo">
+            <a href="/"><img src="#" alt="Mastery Blog logo"></a>
+        </figure>
 
+        <nav>
+            <a href="/">Home</a>
+            <a href="/posts/posts-all">Posts</a>
+            <a href="/authors/authors-all">Authors</a>
+            <a href="/genres/genres-all">Genres</a>
+            <a href="/tags/tags-all">Tags</a>
+        </nav>
+    </header>
+    
 
+<body>
         <div class="wrapper">
                 
-                <h1 class="post__header">Post!</h1>
+                <h1 class="post__header">Blog Post</h1>
 
-                <div class= "box post__list">
-                        <div class="post" th:each="post : ${posts}">
-
-                                <h2 class="post__title">
-                                        <a th:text="${post.title}"th:href="@{|/post/${post.id}|}"></a>
-                                    </h2>
-                                <!-- <h2 class="post-title" th:text="${post.title}"> Title</h2> -->
+                <div class= "box entire__blog">
+                        
+                                <h2 class="post-title" th:text="${post.title}"> Title</h2>
                                 <p class="post-body">
+                                       
                                   <span th:text="${post.body}">body</span>  
                                 </p>
                                 <h3>DATE</h3>
@@ -54,9 +48,9 @@
                                 </ul> 
 
                                 <h3>GENRE</h3>
-                                <h4 class="post-genre">
+                                <p class="post-genre">
                                         <span th:text="${post.genre.name}">genre</span>  
-                                </h4>
+                                </p>
                                 <!-- <h3 class="post-tags">
                                         <span th:text="${post.tags}">tag</span>  
                                 </h3> -->
@@ -71,11 +65,11 @@
                  </div>
 
         </div>
+</body>
 
-        
-        <footer>
-            <p>Mastery Blog Enterprises, 2019</p>
-        </footer>
+<footer>
+        <p>Mastery Blog Enterprises, 2019</p>
+    </footer>
 
-    </body>
+
 </html>
