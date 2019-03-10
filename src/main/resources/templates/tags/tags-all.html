@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mastery Blog</title>
+        <link rel="stylesheet" type="text/css" href="#">
+    </head>
+    <body>
+        <header>
+            <figure id="logo">
+                <a href="/"><img src="#" alt="Mastery Blog logo"></a>
+            </figure>
+            <p>Blog Name Goes Here!</p>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/posts/posts-all">Posts</a>
+                <a href="/authors/authors-all">Authors</a>
+                <a href="/genres/genres-all">Genres</a>
+                <a href="/tags/tags-all">Tags</a>
+            </nav>
+        </header>
+        
+
+
+
+        <!-- <div class="wrapper">
+                <div class="box tags">
+                  <h1 class="tags-all-header"> Tags</h1>
+                  <div class="tag" th:each="tag : ${tags}">
+                    <h2 class="tag-name" th:text="${tag.name}"> name</h2>
+                  </div> 
+                 </div> closes box tags -->
+
+
+                <div class= "box tag__list">
+                        <!-- List comments -->
+                        <ul class= "tags__ul">
+                        <li class="tags__list" th:each="tag : ${tags}">
+                                <a th:text="${tag.name}"th:href="@{|/tag/${tag.id}|}"></a>
+                            </li>
+                        </ul>
+                        </div>
+
+
+                      
+                <form th:action="tags-all" method="POST" class="tagbox">
+            
+                <div class="create__tag"> 
+                <h3>Create Tag</h3>
+                <input type="tag" class="add__tag__name" name="name" placeholder="Enter Tag Name" maxlength="100" style="width: 500px; "></textarea>
+                <input type="submit" name="Create Tag" value="submit" style="width: 200px;" required/> 
+                
+                </form>
+            </div> <!--closes create tags-->
+       
+
+
+            </div> <!--closes wrapper-->
+
+
+        
+        <footer>
+            <p>Mastery Blog Enterprises, 2019</p>
+        </footer>
+
+    </body>
+</html>
