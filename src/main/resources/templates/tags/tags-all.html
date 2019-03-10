@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Mastery Blog</title>
+        <title>Tags</title>
         <link rel="stylesheet" type="text/css" href="#">
     </head>
     <body>
@@ -25,39 +25,31 @@
 
 
 
-        <!-- <div class="wrapper">
-                <div class="box tags">
-                  <h1 class="tags-all-header"> Tags</h1>
-                  <div class="tag" th:each="tag : ${tags}">
-                    <h2 class="tag-name" th:text="${tag.name}"> name</h2>
-                  </div> 
-                 </div> closes box tags -->
-
+      <div class="wrapper">
+                
+                <h1 class="tags-all-header"> Tags!</h1>
 
                 <div class= "box tag__list">
-                        <!-- List comments -->
-                        <ul class= "tags__ul">
+                    <ul class= "tags__ul">
                         <li class="tags__list" th:each="tag : ${tags}">
-                                <a th:text="${tag.name}"th:href="@{|/tag/${tag.id}|}"></a>
-                            </li>
-                        </ul>
-                        </div>
+                             <a th:text="${tag.name}"th:href="@{|/tag/${tag.id}|}"></a>
+                        </li>
+                    </ul>
+                 </div>
 
 
                       
                 <form th:action="tags-all" method="POST" class="tagbox">
             
                 <div class="create__tag"> 
-                <h3>Create Tag</h3>
-                <input type="tag" class="add__tag__name" name="name" placeholder="Enter Tag Name" maxlength="100" style="width: 500px; "></textarea>
-                <input type="submit" name="Create Tag" value="submit" style="width: 200px;" required/> 
-                
+                    <h3>Create Tag</h3>
+                        <input type="tag" class="add__tag__name" name="name" placeholder="Enter Tag Name" maxlength="100" style="width: 500px; "></textarea>
+                        <input type="submit" name="Create Tag" value="submit" style="width: 200px;" required/> 
+                </div> <!--closes create tags-->
                 </form>
-            </div> <!--closes create tags-->
-       
 
 
-            </div> <!--closes wrapper-->
+     </div> <!--closes wrapper-->
 
 
         
