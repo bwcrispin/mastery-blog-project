@@ -21,8 +21,27 @@
                 <a href="/tags/tags-all">Tags</a>
             </nav>
         </header>
-        <h1>Authors!!</h1>
-        
+        <section>
+            <h1>Authors!!</h1>
+            <P>List of all of the wonderful Authors that have contributed to our Blog:</P>
+        </section>
+        <ul th:each="author: ${authors}">
+            <div>
+                <li>
+                    <h3><a th:text="${author.name}" th:href="@{|authors/${author.id}|}">Default</a></h3>
+                </li>
+            </div>
+        </ul>
+        <div>
+            <form method="POST">
+                <div>
+                    <input type="text" name="name" placeholder="Enter a new author" />
+                </div>
+                <div>
+                    <button id="button" type="submit">Add Author</button>
+                </div>
+            </form>
+        </div>
         <footer>
             <p>Mastery Blog Enterprises, 2019</p>
         </footer>
