@@ -33,7 +33,7 @@ public class GenreController {
 	}
 
 	// maps html for one genre by id
-	@GetMapping("/genres/{id}")
+	@GetMapping("/genre/{genreId}")
 	public String getSingleGenre(@PathVariable Long genreId, Model model) {
 		model.addAttribute("genre", genreRepo.findById(genreId).get());
 		return "/genres/genre-single";

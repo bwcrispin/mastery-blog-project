@@ -27,8 +27,8 @@
         </section>
         <ul th:each="author: ${authors}">
             <div>
-                <li>
-                    <h3><a th:text="${author.name}" th:href="@{|authors/${author.id}|}">Default</a></h3>
+                <li>                                        
+                    <h3><a th:text="${author.name}" th:href="@{|/author/${author.id}|}">Default Author</a></h3>
                 </li>
             </div>
         </ul>
