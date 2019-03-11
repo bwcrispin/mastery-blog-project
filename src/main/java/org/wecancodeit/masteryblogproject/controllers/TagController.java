@@ -30,8 +30,8 @@ public class TagController {
 
 	// add new tag
 	@PostMapping("/tags/tags-all")
-	public String addTag(String name) {
-		tagRepo.save(new Tag(name));
+	public String addTag(String tagName) {
+		tagRepo.save(new Tag(tagName));
 		return "redirect:/tags/tags-all";	
 	}
 

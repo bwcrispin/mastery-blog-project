@@ -1,5 +1,7 @@
 package org.wecancodeit.masteryblogproject.controllers;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,7 @@ public class AuthorController {
 	@Resource
 	AuthorRepository authorRepo;
 
+
 	// maps html page of all authors
 	@GetMapping("/authors/authors-all")
 	public String getAuthorsAll(String author, Model model) {
@@ -27,8 +30,8 @@ public class AuthorController {
 
 	// add new author
 	@PostMapping("/authors/authors-all")
-	public String addAuthor(String name) {
-		authorRepo.save(new Author(name));
+	public String addAuthor(String authorName) {
+		authorRepo.save(new Author(authorName));
 		return "redirect:/authors/authors-all";
 	}
 

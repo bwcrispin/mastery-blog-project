@@ -27,8 +27,8 @@ public class GenreController {
 
 	// add new genre
 	@PostMapping("/genres/genres-all")
-	public String addGenre(String name) {
-		genreRepo.save(new Genre(name));
+	public String addGenre(String genreName) {
+		genreRepo.save(new Genre(genreName));
 		return "redirect:/genres/genres-all";
 	}
 

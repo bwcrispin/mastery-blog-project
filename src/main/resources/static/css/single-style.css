@@ -26,3 +26,27 @@ a{
      margin-bottom: 16rem; 
      background-color: #e4e2e3;
   }
+  header{
+    background-color: #051e3e;
+    color:whitesmoke;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+header p {
+    text-align: center;
+    font-size: 2rem;
+}
+
+nav{
+    text-align: center;
+}
+nav a{
+    color:whitesmoke;
+}
+footer{
+    background-color: #051e3e;
+    color:whitesmoke;
+    padding-top: .3rem;
+    padding-bottom: .3rem; 
+}

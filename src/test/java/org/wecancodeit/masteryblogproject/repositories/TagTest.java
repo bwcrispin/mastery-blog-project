@@ -35,6 +35,6 @@ public class TagTest {
 	    
 	    Tag tagFromDatabase = tagRepo.findByName("FakeNews");
 	 
-	    assertThat(tagFromDatabase.getName(), is("FakeNews"));
+	    assertThat(tagFromDatabase.getTagName(), is("FakeNews"));
 	}
 }

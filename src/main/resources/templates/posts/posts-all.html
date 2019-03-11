@@ -10,10 +10,7 @@
     </head>
     <body>
         <header>
-            <figure id="logo">
-                <a href="/"><img src="#" alt="Mastery Blog logo"></a>
-            </figure>
-            <p>Blog Name Goes Here!</p>
+            <p>Mastery Blog</p>
             <nav>
                 <a href="/">Home</a>
                 <a href="/posts/posts-all">Posts</a>
@@ -22,55 +19,76 @@
                 <a href="/tags/tags-all">Tags</a>
             </nav>
         </header>
-        
-        
-
-
         <div class="wrapper">
-                <div class="header__name">
+            <div class="header__name">
                 <h1 class="post__header">Blogs</h1>
             </div>
-                <div class= "post__list">
-                        <div class="post" th:each="post : ${posts}">
-
-                                <h2 class="post__title">
-                                        <a th:text="${post.title}"th:href="@{|/post/${post.id}|}"></a>
-                                    </h2>
-                                <!-- <h2 class="post-title" th:text="${post.title}"> Title</h2> -->
-                                <p class="post-body">
-                                  <span th:text="${post.body}">body</span>  
-                                </p>
-                                <h4>Date</h4>
-                                <p class="post-date">
-                                        <span th:text="${post.date}">date</span>  
-                                </p>
-                                <!-- <h3 class="post-author">
-                                        <span th:text="${post.authors}">author</span>  
-                                </h3> -->
-                                <h4>Written By</h4>
-                                <ul class="post__authors__ul">
-                                        <li class="post__authors__author" th:each="author : ${post.authors}">
-                                            <span th:text="${author.name}">author</span>
-                                        </li>
-                                </ul> 
-
-                                <h4>Genre</h4>
-                                <p class="post-genre">
-                                        <span th:text="${post.genre.name}">genre</span>  
-                                </p>
-                                <!-- <h3 class="post-tags">
-                                        <span th:text="${post.tags}">tag</span>  
-                                </h3> -->
-                                
-                                <h4>Tags</h4>
-                                <ul class="post__tags__ul">
-                                        <li class="post__tags__tag" th:each="tag : ${post.tags}">
-                                            <span th:text="${tag.name}">tag</span>
-                                        </li>
-                                </ul>
+            <div class= "post__list">
+                <h1 class="post__header">Posts!</h1>
+                <div>
+                    <form>
+                        <input type="text" name="title" placeholder="title of post"/>
+                        <input type="text" name="body" placeholder="enter your post here"/> 
+                        <div th:object="${author}">
+                            <select name="authorId"> <!--for Author-->
+                                <option value="" disabled selected hidden>Select Author</option>
+                                <option th:each="author : ${author}" th:value="${author.authorId}" th:text="${author.authorName}">Option</option>
+                            </select>
                         </div>
-                 </div>
-
+                        <div th:object=${genre}>
+                            <select name="genreId"> <!--for Genre-->
+                                <option value="" disabled selected hidden>Select Genre</option>
+                                <option th:each="genre : ${genres}" th:value="${genre.genreId}" th:text="{genre.genreName}">Test</option>
+                            </select>
+                        </div>
+                        <div th:object="${tag}">
+                            <select name="tagId"> <!--for Tag-->
+                                <option value="" disabled selected hidden>Select Tag</option>
+                                <option th:each="tag : ${tags}" th:value=${tag.tagId} th:text="${tag.tagName}">Test</option>
+                            </select>
+                        </div>
+                        <button id="button" type="submit">Submit Post</button>
+                    </form>
+                </div>
+                <div class= "box post__list">
+                    <div class="post" th:each="post : ${posts}">
+                        <h2 class="post__title">
+                            <a th:text="${post.title}" th:href="@{|/post/${post.id}|}"></a>
+                        </h2>
+                        <!-- <h2 class="post-title" th:text="${post.title}"> Title</h2> -->
+                        <p class="post-body">
+                            <span th:text="${post.body}">body</span>  
+                        </p>
+                        <h4>Date</h4>
+                        <p class="post-date">
+                                <span th:text="${post.date}">date</span>  
+                        </p>
+                        <!-- <h3 class="post-author">
+                                <span th:text="${post.authors}">author</span>  
+                        </h3> -->
+                        <h4>Written By</h4>
+                        <ul class="post__authors__ul">
+                                <li class="post__authors__author" th:each="author : ${post.authors}">
+                                    <span th:text="${author.authorName}">author</span>
+                                </li>
+                        </ul> 
+                        <h3>GENRE</h3>
+                        <h4 class="post-genre">
+                                <span th:text="${post.genre.genreName}">genre</span>  
+                        </h4>
+                        <!-- <h3 class="post-tags">
+                                <span th:text="${post.tags}">tag</span>  
+                        </h3> -->
+                        
+                        <h3>TAGS</h3>
+                        <ul class="post__tags__ul">
+                                <li class="post__tags__tag" th:each="tag : ${post.tags}">
+                                    <span th:text="${tag.tagName}">tag</span>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
         </div>
 
         
