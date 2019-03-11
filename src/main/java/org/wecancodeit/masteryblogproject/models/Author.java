@@ -16,7 +16,7 @@ public class Author {
 	private Long id;
 	private String name;
 	
-	@ManyToMany
+	@ManyToMany(mappedBy="authors")
 	private Collection<Post> posts;
 	
 	

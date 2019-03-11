@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Mastery Blog</title>
+        <link rel="stylesheet" href="/css/style-all-genres.css">
+        <title>Genres</title>
         <link rel="stylesheet" type="text/css" href="#">
     </head>
     <body>
@@ -21,7 +22,40 @@
                 <a href="/tags/tags-all">Tags</a>
             </nav>
         </header>
-        <h1>Genres!</h1>
+       
+        
+
+
+        <div class="wrapper">
+                
+                <div class="header__name">
+                <h1 class="gnenre__header"> Genres</h1>
+            </div>
+                <div class= "genre__list">
+                    <ul class= "genres__ul">
+                        <li class="genres__list" th:each="genre : ${genres}">
+                             <a th:text="${genre.name}"th:href="@{|/genre/${genre.id}|}"></a>
+                        </li>
+                    </ul>
+                 </div>
+
+
+                <div class= "create__genre__body">  
+                <form th:action="genres-all" method="POST" class="genrebox">
+            
+                <div class="create__genre"> 
+                    <h3>Create Genre</h3>
+                        <input type="genre" class="add__genre__name" name="name" placeholder="Enter Genre Name" maxlength="100" style="width: 500px; "></textarea>
+                        <input type="submit" name="Create Genre" value="submit" style="width: 200px;" required/> 
+                </div> <!--closes create tags-->
+                </form>
+            </div> 
+
+     </div> <!--closes wrapper-->
+
+
+
+
         
         <footer>
             <p>Mastery Blog Enterprises, 2019</p>
