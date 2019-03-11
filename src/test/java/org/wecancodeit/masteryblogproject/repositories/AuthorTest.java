@@ -34,7 +34,7 @@ public class AuthorTest {
 	    
 	    Author authorFromDatabase = authorRepo.findAuthorByName("author");
 	 
-	    assertThat(authorFromDatabase.getName(), is("author"));
+	    assertThat(authorFromDatabase.getAuthorName(), is("author"));
 	}
 
 }

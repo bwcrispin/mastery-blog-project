@@ -29,21 +29,21 @@
                         <input type="text" name="title" placeholder="title of post"/>
                         <input type="text" name="body" placeholder="enter your post here"/> 
                         <div th:object="${author}">
-                            <select name="id"> <!--for Author-->
+                            <select name="authorId"> <!--for Author-->
                                 <option value="" disabled selected hidden>Select Author</option>
-                                <option th:each="author : ${author}" th:value="${author.id}" th:text="${author.name}">Option</option>
+                                <option th:each="author : ${author}" th:value="${author.authorId}" th:text="${author.authorName}">Option</option>
                             </select>
                         </div>
                         <div th:object=${genre}>
-                            <select name="name"> <!--for Genre-->
+                            <select name="genreId"> <!--for Genre-->
                                 <option value="" disabled selected hidden>Select Genre</option>
-                                <option th:each="genre : ${genres}" th:value="${genre.id}" th:text="{genre.name}">Test</option>
+                                <option th:each="genre : ${genres}" th:value="${genre.genreId}" th:text="{genre.genreName}">Test</option>
                             </select>
                         </div>
                         <div th:object="${tag}">
-                            <select name="name"> <!--for Tag-->
+                            <select name="tagId"> <!--for Tag-->
                                 <option value="" disabled selected hidden>Select Tag</option>
-                                <option th:each="tag : ${tags}" th:value=${tag.id} th:text="${tag.name}">Test</option>
+                                <option th:each="tag : ${tags}" th:value=${tag.tagId} th:text="${tag.tagName}">Test</option>
                             </select>
                         </div>
                         <button id="button" type="submit">Submit Post</button>
@@ -53,7 +53,7 @@
                         <div class="post" th:each="post : ${posts}">
 
                                 <h2 class="post__title">
-                                        <a th:text="${post.title}"th:href="@{|/post/${post.id}|}"></a>
+                                        <a th:text="${post.title}" th:href="@{|/post/${post.id}|}"></a>
                                     </h2>
                                 <!-- <h2 class="post-title" th:text="${post.title}"> Title</h2> -->
                                 <p class="post-body">
@@ -69,13 +69,13 @@
                                 <h3>AUTHORS</h3>
                                 <ul class="post__authors__ul">
                                         <li class="post__authors__author" th:each="author : ${post.authors}">
-                                            <span th:text="${author.name}">author</span>
+                                            <span th:text="${author.authorName}">author</span>
                                         </li>
                                 </ul> 
 
                             <h3>GENRE</h3>
                             <h4 class="post-genre">
-                                    <span th:text="${post.genre.name}">genre</span>  
+                                    <span th:text="${post.genre.genreName}">genre</span>  
                             </h4>
                             <!-- <h3 class="post-tags">
                                     <span th:text="${post.tags}">tag</span>  
@@ -84,7 +84,7 @@
                             <h3>TAGS</h3>
                             <ul class="post__tags__ul">
                                     <li class="post__tags__tag" th:each="tag : ${post.tags}">
-                                        <span th:text="${tag.name}">tag</span>
+                                        <span th:text="${tag.tagName}">tag</span>
                                     </li>
                             </ul>
                     </div>

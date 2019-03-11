@@ -42,9 +42,9 @@ public class GenreTest {
 	    entityManager.flush(); 
 	    entityManager.clear();
 	    
-	    Genre genreFromDatabase = genreRepo.findByName("Tech");
+	    Genre genreFromDatabase = genreRepo.findGenreByName("Tech");
 	 
-	    assertThat(genreFromDatabase.getName(), is("Tech"));
+	    assertThat(genreFromDatabase.getGenreName(), is("Tech"));
 	}
 
 }

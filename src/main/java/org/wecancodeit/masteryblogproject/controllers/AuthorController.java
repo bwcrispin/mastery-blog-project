@@ -30,8 +30,8 @@ public class AuthorController {
 
 	// add new author
 	@PostMapping("/authors/authors-all")
-	public String addAuthor(String name) {
-		authorRepo.save(new Author(name));
+	public String addAuthor(String authorName) {
+		authorRepo.save(new Author(authorName));
 		return "redirect:/authors/authors-all";
 	}
 

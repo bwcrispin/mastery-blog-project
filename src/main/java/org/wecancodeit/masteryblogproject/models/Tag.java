@@ -11,24 +11,24 @@ import javax.persistence.ManyToMany;
 public class Tag {
 	@Id
 	@GeneratedValue
-	private Long id;
-	private String name;
+	private Long tagId;
+	private String tagName;
 	
 	@ManyToMany(mappedBy="tags")
 	private Collection<Post> posts;
 	
 	public Tag() {}
 	
-	public Tag(String name) {
-		this.name = name;
+	public Tag(String tagName) {
+		this.tagName = tagName;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getTagId() {
+		return tagId;
 	}
 
-	public String getName() {
-		return name;
+	public String getTagName() {
+		return tagName;
 	}
 
 	public Collection<Post> getPosts() {
@@ -37,7 +37,7 @@ public class Tag {
 
 	@Override
 	public String toString() {
-		return "Tag [id=" + id + ", name=" + name + "]";
+		return "Tag [tagId=" + tagId + ", tagName=" + tagName + "]";
 	}
 	
 	

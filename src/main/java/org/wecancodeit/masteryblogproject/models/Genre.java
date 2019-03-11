@@ -11,8 +11,8 @@ import javax.persistence.OneToMany;
 public class Genre {
 	@Id
 	@GeneratedValue
-	private Long id;
-	private String name;
+	private Long genreId;
+	private String genreName;
 	
 	@OneToMany(mappedBy="genre")
 	private Collection<Post> posts;
@@ -20,16 +20,16 @@ public class Genre {
 	
 	public Genre() {}
 	
-	public Genre(String name) {
-		this.name = name;
+	public Genre(String genreName) {
+		this.genreName = genreName;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getGenreId() {
+		return genreId;
 	}
 
-	public String getName() {
-		return name;
+	public String getGenreName() {
+		return genreName;
 	}
 
 	public Collection<Post> getPosts() {
@@ -38,8 +38,9 @@ public class Genre {
 
 	@Override
 	public String toString() {
-		return "Genre [id=" + id + ", name=" + name + "]";
+		return "Genre [genreId=" + genreId + ", genreName=" + genreName + "]";
 	}
+
 
 
 }

@@ -28,7 +28,7 @@
         <ul th:each="author: ${authors}">
             <div>
                 <li>                                        
-                    <h3><a th:text="${author.name}" th:href="@{|/author/${author.id}|}">Default Author</a></h3>
+                    <h3><a th:text="${author.authorName}" th:href="@{|/author/${author.authorId}|}">Default Author</a></h3>
                 </li>
             </div>
         </ul>
@@ -37,7 +37,7 @@
                 <form th:action="authors-all" method="POST" class="authorbox">
             <!-- <form method="POST"> -->
                 <div>
-                    <input type="text" name="name" placeholder="Enter a new author" />
+                    <input type="text" name="authorName" placeholder="Enter a new author" />
                 </div>
                 <div>
                     <button id="button" type="submit">Add Author</button>

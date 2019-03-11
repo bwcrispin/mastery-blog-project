@@ -6,7 +6,8 @@ import org.wecancodeit.masteryblogproject.models.Tag;
 
 public interface TagRepository extends CrudRepository<Tag, Long>{
 
-	Tag findByName(String name);
+	//Tag findByName(String name);
 
+	//Tag findTagById(Long tagId);
 
 }
