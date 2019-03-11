@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Tags</title>
         <link rel="stylesheet" type="text/css" href="#">
+        <link rel="stylesheet" href="/css/style-all-tags.css">
     </head>
     <body>
         <header>
@@ -27,9 +28,11 @@
 
       <div class="wrapper">
                 
-                <h1 class="tags-all-header"> Tags!</h1>
 
-                <div class= "box tag__list">
+                <div class="header__name">
+                <h1 class="tags-all-header"> Tags!</h1>
+            </div>
+                <div class= "tag__list">
                     <ul class= "tags__ul">
                         <li class="tags__list" th:each="tag : ${tags}">
                              <a th:text="${tag.tagName}"th:href="@{|/tag/${tag.tagId}|}"></a>
@@ -38,16 +41,16 @@
                  </div>
 
 
-                      
+                  <div class= "create__tag__body">   
                 <form th:action="tags-all" method="POST" class="tagbox">
             
                 <div class="create__tag"> 
                     <h3>Create Tag</h3>
-                        <input type="tag" class="add__tag__name" name="tagName" placeholder="Enter Tag Name" maxlength="100" style="width: 500px; "></textarea>
+                        <input type="tag" class="add__tag__name" name="tagName" placeholder="Enter Tag Name" maxlength="100" style="width: 450px; "></textarea>
                         <input type="submit" name="Create Tag" value="submit" style="width: 200px;" required/> 
                 </div> <!--closes create tags-->
                 </form>
-
+            </div> 
 
      </div> <!--closes wrapper-->
 
