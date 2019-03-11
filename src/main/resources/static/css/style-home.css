@@ -5,11 +5,31 @@
     list-style-type: none;
 } 
 
+header{
+    background-color: #051e3e;
+    color:whitesmoke;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+header p {
+    text-align: center;
+    font-size: 2rem;
+}
+
+nav{
+    text-align: center;
+}
+nav a{
+    color:whitesmoke;
+}
+
 a{
     text-decoration: none;
     color: whitesmoke;
     padding-right:12px;
 }
+
 a:hover{
     color: darkblue;
 }
@@ -28,18 +48,6 @@ a:hover{
     
 }
 
-header{
-    background-color: #051e3e;
-    color:whitesmoke;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-nav{
-    text-align: center;
-}
-nav a{
-    color:whitesmoke;
-}
 footer{
     background-color: #051e3e;
     color:whitesmoke;

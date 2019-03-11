@@ -67,6 +67,12 @@ header{
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
+header p {
+    text-align: center;
+    font-size: 2rem;
+}
+
 nav{
     text-align: center;
 }

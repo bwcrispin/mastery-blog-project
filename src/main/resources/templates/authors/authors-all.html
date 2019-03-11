@@ -10,10 +10,7 @@
     </head>
     <body>
         <header>
-            <figure id="logo">
-                <a href="/"><img src="#" alt="Mastery Blog logo"></a>
-            </figure>
-            <p>Blog Name Goes Here!</p>
+                <p>Mastery Blog</p>
             <nav>
                 <a href="/">Home</a>
                 <a href="/posts/posts-all">Posts</a>
@@ -40,12 +37,9 @@
         <div class = "create__author__body">
             <form th:action="authors-all" method="POST" class="authorbox">
             <!-- <form method="POST"> -->
-                <div>
-                    <input type="text" name="authorName" placeholder="Enter a new author" />
-
                 <div class= "create__author">
                         <h3>Add New Author</h3>
-                    <input type="text" name="name" placeholder="Enter a new author" style="width: 450px;" />
+                    <input type="text" name="authorName" placeholder="Enter a new author" style="width: 450px;" />
                 </div>
                 <div>
                     <button id="button" type="submit">Add Author</button>

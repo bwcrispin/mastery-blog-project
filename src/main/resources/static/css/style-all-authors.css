@@ -5,9 +5,29 @@
     list-style-type: none;
 } 
 
+header{
+    background-color: #051e3e;
+    color:whitesmoke;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+header p {
+    text-align: center;
+    font-size: 2rem;
+}
+
+nav{
+    text-align: center;
+}
+nav a{
+    color:whitesmoke;
+}
+
 a{
     text-decoration: none;
 }
+
 a:hover{
     color: darkblue;
 }
@@ -22,8 +42,7 @@ a:hover{
     padding-bottom: 8rem;
     background-color: hsla(205, 42%, 79%, 0.5);
     opacity: 1.0;
-    text-align: center;
-    
+    text-align: center;   
 }
 
 
@@ -50,18 +69,7 @@ a:hover{
      padding: 9px;
      margin-bottom: 11rem; 
 }
-header{
-    background-color: #051e3e;
-    color:whitesmoke;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-nav{
-    text-align: center;
-}
-nav a{
-    color:whitesmoke;
-}
+
 footer{
     background-color: #051e3e;
     color:whitesmoke;

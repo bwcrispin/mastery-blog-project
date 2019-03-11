@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/single-post-style.css">
-    <title>Post</title>
-</head>
-<header>
-        <figure id="logo">
-            <a href="/"><img src="#" alt="Mastery Blog logo"></a>
-        </figure>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/single-post-style.css">
+        <title>Post</title>
+    </head>
+    <header>
+        <p>Mastery Blog</p>
         <nav>
             <a href="/">Home</a>
             <a href="/posts/posts-all">Posts</a>
@@ -20,67 +17,52 @@
             <a href="/tags/tags-all">Tags</a>
         </nav>
     </header>
-    
-
-<body>
-        <div class="wrapper">
-                
+    <body>
+        <div class="wrapper">    
             <!-- <div class= "main_heading">
                 <h1 class="post__header">Blog Post</h1>
             </div> -->
-                <div class= "entire__blog">
-                            <div class="post__title">
-                                <h1 class="post-title" th:text="${post.title}"> Title</h1>
-                            </div>
-
-                            <div class="post__body">
-                                <p class="post-body">         
-                                  <span th:text="${post.body}">body</span>  
-                                </p>
-                            </div> 
-
-                            <div class= "post__date">
-                                <h4>Date</h4>
-                                <p class="post-date">
-                                        <span th:text="${post.date}">date</span>  
-                                </p>
-                            </div>
-                              
-                            <div class= "post__authors">
-                                <h4>Written By</h4>
-                                <ul class="post__authors__ul">
-                                        <li class="post__authors__author" th:each="author : ${post.authors}">
-                                            <span th:text="${author.authorName}">author</span>
-                                        </li>
-                                </ul> 
-                            </div>
-
-                            <div class="post__genre">
-                                <h4>Genre</h4>
-                                <p class="post-genre">
-                                        <span th:text="${post.genre.genreName}">genre</span>  
-                                </p>
-                            </div> 
-                            
-                            <div class="post__tags">
-                                <h4>Tags</h4>
-                                <ul class="post__tags__ul">
-                                        <li class="post__tags__tag" th:each="tag : ${post.tags}">
-                                            <span th:text="${tag.tagName}">tag</span>
-                                        </li>
-                                    </ul>
-                            </div>  
-                            
-                            
-                       
-                 </div>
-
+            <div class= "entire__blog">
+                <div class="post__title">
+                    <h1 class="post-title" th:text="${post.title}"> Title</h1>
+                </div>
+                <div class="post__body">
+                    <p class="post-body">         
+                    <span th:text="${post.body}">body</span>  
+                    </p>
+                </div> 
+                <div class= "post__date">
+                    <h4>Date</h4>
+                    <p class="post-date">
+                            <span th:text="${post.date}">date</span>  
+                    </p>
+                </div>
+                <div class= "post__authors">
+                    <h4>Written By</h4>
+                    <ul class="post__authors__ul">
+                            <li class="post__authors__author" th:each="author : ${post.authors}">
+                                <span th:text="${author.authorName}">author</span>
+                            </li>
+                    </ul> 
+                </div>
+                <div class="post__genre">
+                    <h4>Genre</h4>
+                    <p class="post-genre">
+                            <span th:text="${post.genre.genreName}">genre</span>  
+                    </p>
+                </div> 
+                <div class="post__tags">
+                    <h4>Tags</h4>
+                    <ul class="post__tags__ul">
+                            <li class="post__tags__tag" th:each="tag : ${post.tags}">
+                                <span th:text="${tag.tagName}">tag</span>
+                            </li>
+                        </ul>
+                </div>
+            </div>
         </div>
-</body>
-
-<footer>
-        <p>Mastery Blog Enterprises, 2019</p>
-    </footer>
-
-
+        <footer>
+            <p>Mastery Blog Enterprises, 2019</p>
+        </footer>
+    </body>
 </html>
