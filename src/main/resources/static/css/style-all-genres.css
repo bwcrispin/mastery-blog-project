@@ -5,6 +5,11 @@
     list-style-type: none;
 } 
 
+header a{
+    text-decoration: none;
+    color: whitesmoke;
+    padding-right:12px;
+}
 a{
     text-decoration: none;
 }
@@ -49,4 +54,23 @@ a:hover{
      text-align: center;
      padding: 9px;
      margin-bottom: 11rem; 
+}
+
+header{
+    background-color: #051e3e;
+    color:whitesmoke;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+nav{
+    text-align: center;
+}
+nav a{
+    color:whitesmoke;
+}
+footer{
+    background-color: #051e3e;
+    color:whitesmoke;
+    padding-top: .3rem;
+    padding-bottom: .3rem; 
 }
