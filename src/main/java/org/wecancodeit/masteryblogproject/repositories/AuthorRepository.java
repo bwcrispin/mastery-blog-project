@@ -5,5 +5,5 @@ import org.wecancodeit.masteryblogproject.models.Author;
 import org.wecancodeit.masteryblogproject.models.Tag;
 
 public interface AuthorRepository extends CrudRepository<Author, Long>{
-	Author findByName(String name);
+	Author findAuthorByName(String name);
 }
