@@ -1,5 +1,7 @@
 package org.wecancodeit.masteryblogproject.controllers;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,7 @@ public class AuthorController {
 
 	@Resource
 	AuthorRepository authorRepo;
+
 
 	// maps html page of all authors
 	@GetMapping("/authors/authors-all")

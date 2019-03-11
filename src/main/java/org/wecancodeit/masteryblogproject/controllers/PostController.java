@@ -48,9 +48,10 @@ public class PostController {
 	}
 	
 	@PostMapping("/posts/posts-all")
-	public String addPost(String title, String body, LocalDateTime date, Author authors, Genre genre,
+	public String addPost(String title, String body, LocalDateTime date, String name, Genre genre,
 			Tag  ...tags) {
-		postRepo.save(new Post(title, body, date, authors, genre, tags));
+		Author author = authorRepo.findAuthorByName(name);
+		postRepo.save(new Post(title, body, date, author, genre, tags));
 		return "redirect:/posts/posts-all";
 	}
 	

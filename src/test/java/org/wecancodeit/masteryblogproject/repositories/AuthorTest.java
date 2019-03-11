@@ -32,7 +32,7 @@ public class AuthorTest {
 	    entityManager.flush(); 
 	    entityManager.clear();
 	    
-	    Author authorFromDatabase = authorRepo.findByName("author");
+	    Author authorFromDatabase = authorRepo.findAuthorByName("author");
 	 
 	    assertThat(authorFromDatabase.getName(), is("author"));
 	}
