@@ -36,22 +36,29 @@ public class PostController {
 	PostRepository postRepo;
 	
 	@GetMapping("/posts/posts-all")
-	public String getPostsAll(String post, Model model) {
+	public String getPostsAll(Model model) {
 		model.addAttribute("posts", postRepo.findAll());
+		model.addAttribute("genre", genreRepo.findAll());
+		model.addAttribute("authors", authorRepo.findAll());
+		model.addAttribute("tags", tagRepo.findAll());
 		return "/posts/posts-all";
 	}
 	
 	@GetMapping("/post/{postId}")
 	public String getSinglePost(@PathVariable Long postId, Model model) {
 		model.addAttribute("post", postRepo.findById(postId).get());
+		model.addAttribute("author", authorRepo.findAll());
+		model.addAttribute("tag", tagRepo.findAll());
 		return "/posts/post-single";
 	}
 	
 	@PostMapping("/posts/posts-all")
-	public String addPost(String title, String body, LocalDateTime date, String name, Genre genre,
-			Tag  ...tags) {
-		Author author = authorRepo.findAuthorByName(name);
-		postRepo.save(new Post(title, body, date, author, genre, tags));
+	public String addPost(String title, String body, LocalDateTime date, Long authorId, Long genreId,
+			Long tagId) {
+		Genre genre = genreRepo.findById(genreId).get();
+		Author author = authorRepo.findById(authorId).get();
+		Tag tag = tagRepo.findById(tagId).get();
+		postRepo.save(new Post(title, body, date, author, genre, tag));
 		return "redirect:/posts/posts-all";
 	}
 	

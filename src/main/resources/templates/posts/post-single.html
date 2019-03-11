@@ -50,7 +50,7 @@
                                 <h4>Written By</h4>
                                 <ul class="post__authors__ul">
                                         <li class="post__authors__author" th:each="author : ${post.authors}">
-                                            <span th:text="${author.name}">author</span>
+                                            <span th:text="${author.authorName}">author</span>
                                         </li>
                                 </ul> 
                             </div>
@@ -58,7 +58,7 @@
                             <div class="post__genre">
                                 <h4>Genre</h4>
                                 <p class="post-genre">
-                                        <span th:text="${post.genre.name}">genre</span>  
+                                        <span th:text="${post.genre.genreName}">genre</span>  
                                 </p>
                             </div> 
                             
@@ -66,7 +66,7 @@
                                 <h4>Tags</h4>
                                 <ul class="post__tags__ul">
                                         <li class="post__tags__tag" th:each="tag : ${post.tags}">
-                                            <span th:text="${tag.name}">tag</span>
+                                            <span th:text="${tag.tagName}">tag</span>
                                         </li>
                                     </ul>
                             </div>  

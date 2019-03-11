@@ -26,37 +26,31 @@
         
 
 
-        <div class="wrapper">
-                
+    <div class="wrapper">
+       <h1 class="genre__header"> Genre!</h1>
+           <div class= "box genre__list">
                 <div class="header__name">
-                <h1 class="gnenre__header"> Genres</h1>
-            </div>
+                  <h1 class="gnenre__header"> Genres</h1>
+                </div>
                 <div class= "genre__list">
                     <ul class= "genres__ul">
                         <li class="genres__list" th:each="genre : ${genres}">
-                             <a th:text="${genre.name}"th:href="@{|/genre/${genre.id}|}"></a>
+                             <a th:text="${genre.genreName}"th:href="@{|/genre/${genre.genreId}|}"></a>
                         </li>
                     </ul>
                  </div>
-
-
                 <div class= "create__genre__body">  
-                <form th:action="genres-all" method="POST" class="genrebox">
-            
-                <div class="create__genre"> 
+                  <form th:action="genres-all" method="POST" class="genrebox">
+                    <div class="create__genre"> 
                     <h3>Create Genre</h3>
-                        <input type="genre" class="add__genre__name" name="name" placeholder="Enter Genre Name" maxlength="100" style="width: 500px; "></textarea>
+                        <input type="genre" class="add__genre__name" name="genreName" placeholder="Enter Genre Name" maxlength="100" style="width: 500px; "></textarea>
                         <input type="submit" name="Create Genre" value="submit" style="width: 200px;" required/> 
-                </div> <!--closes create tags-->
-                </form>
+                    </div> <!--closes create tags-->
+                  </form>
+                </div>
             </div> 
 
      </div> <!--closes wrapper-->
-
-
-
-
-        
         <footer>
             <p>Mastery Blog Enterprises, 2019</p>
         </footer>

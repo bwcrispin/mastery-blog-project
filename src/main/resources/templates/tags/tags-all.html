@@ -35,7 +35,7 @@
                 <div class= "tag__list">
                     <ul class= "tags__ul">
                         <li class="tags__list" th:each="tag : ${tags}">
-                             <a th:text="${tag.name}"th:href="@{|/tag/${tag.id}|}"></a>
+                             <a th:text="${tag.tagName}"th:href="@{|/tag/${tag.tagId}|}"></a>
                         </li>
                     </ul>
                  </div>
@@ -46,7 +46,7 @@
             
                 <div class="create__tag"> 
                     <h3>Create Tag</h3>
-                        <input type="tag" class="add__tag__name" name="name" placeholder="Enter Tag Name" maxlength="100" style="width: 450px; "></textarea>
+                        <input type="tag" class="add__tag__name" name="tagName" placeholder="Enter Tag Name" maxlength="100" style="width: 450px; "></textarea>
                         <input type="submit" name="Create Tag" value="submit" style="width: 200px;" required/> 
                 </div> <!--closes create tags-->
                 </form>
